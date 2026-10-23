@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CineVibe  — I See Through the Frame</title>
+<meta name="description" content="Film and television archive by Ethan Vale. Frames chosen from the dark, without compromise.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="menu.css">
+<link rel="stylesheet" href="auth.css">
+</head>
+<body>
+
+<!-- ===== SIDEBAR MENU (neumorphic) ===== -->
+<input type="checkbox" id="navToggle" class="nav-toggle">
+
+<header class="site-header">
+  <a class="wordmark" href="#/home" aria-label="CineVibe home">CineVibe</a>
+  <label class="nav-bars" for="navToggle" aria-label="Open menu">
+    <span></span><span></span><span></span>
+  </label>
+</header>
+
+<aside class="sidebar" id="sidebar" aria-label="Main menu">
+  <div class="sidebar-title">
+    <div class="sidebar-logo">CineVibe</div>
+    <label class="sidebar-close" for="navToggle" aria-label="Close menu">&times;</label>
+  </div>
+
+  <ul>
+    <li><a href="#/home"><i class="fas fa-house"></i>Home</a></li>
+    <li><a href="#/archive"><i class="fas fa-film"></i>The Archive</a></li>
+    <li><a href="#/search"><i class="fas fa-magnifying-glass"></i>Search</a></li>
+    <li><a href="#/profile"><i class="fas fa-bookmark"></i>Watchlist</a></li>
+    <li><a href="#/profile"><i class="fas fa-user"></i>Profile</a></li>
+  </ul>
+
+  <div class="sidebar-media">
+    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <div class="sidebar-addr">Nairobi · Cape Town · Reykjavík<br>studio@ethanvale.photo</div>
+</aside>
+
+<label class="nav-backdrop" for="navToggle" aria-hidden="true"></label>
+
+<!-- ===== VIEW 1: ARCHIVE ===== -->
+<section class="view" id="view-archive" data-view="archive">
+  <div id="scrolltrack"></div>
+
+  <div id="stage">
+    <div id="world">
+      <div id="orb"></div>
+      <h1 id="headline"><span class="inner">
+        <span style="--i:0">I</span>
+        <span style="--i:1">See</span>
+        <span style="--i:2">Through</span>
+        <span style="--i:3">the</span>
+        <span style="--i:4">Frame</span>
+      </span></h1>
+    </div>
+  </div>
+
+  <div class="vig"></div>
+  <div id="grid"><div class="rows"></div></div>
+
+  <div class="bio chrome">
+    <div class="who">
+      <img id="avatar" alt="Ethan Vale" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%231a1a1a'/%3E%3Ccircle cx='50' cy='38' r='16' fill='%238c8783'/%3E%3Cpath d='M20 92c0-18 14-28 30-28s30 10 30 28' fill='%238c8783'/%3E%3C/svg%3E">
+      <b>Ethan Vale</b>
+    </div>
+    <p>Film is less about taking pictures and more about learning when to look closer. Every frame in this archive was chosen from the dark, without compromise.</p>
+  </div>
+
+  <div class="colophon chrome">Screening Notes 2026</div>
+
+  <button class="gridbtn" id="gridBtn" aria-label="Toggle grid view">
+    <b></b><b></b><b></b><b></b>
+  </button>
+
+  <div class="cue chrome"><s></s><span>Drag to rotate</span></div>
+
+  <div id="lit">
+    <div class="scrim" data-close></div>
+    <div class="plate" id="plate">
+      <div class="shot">
+        <img id="litImg" alt="">
+        <button class="lit-close" data-close>Close</button>
+      </div>
+      <div class="meta">
+        <div><h2 id="litTitle"></h2><div id="litWhere" class="where"></div></div>
+        <div><p id="litNote" class="note"></p><a id="litCta" class="lit-cta" href="#">View Title →</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div id="intro">
+    <video id="film" muted playsinline autoplay preload="auto" disablepictureinpicture
+      src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260922_195107_ed3f055a-3a13-4a71-b743-e10310454246.mp4"></video>
+    <div class="veil"></div>
+    <button id="skip" class="skip">Skip</button>
+    <div class="fallback"></div>
+  </div>
+
+  <div id="splash">
+    <div class="mark">CineVibe</div>
+    <div class="bar"><s id="bar"></s></div>
+    <div class="tag">Screening Notes 2026</div>
+  </div>
+</section>
+
+<!-- ===== VIEW 2: HOME ===== -->
+<section class="view" id="view-home" data-view="home">
+  <main>
+    <section class="hero" id="hero"></section>
+
+    <section class="row">
+      <div class="row-head"><h2>Now Screening</h2><a href="#/archive">View all →</a></div>
+      <div class="row-track" id="row-now"></div>
+    </section>
+
+    <section class="row">
+      <div class="row-head"><h2>Series Worth the Binge</h2><a href="#/search?type=series">View all →</a></div>
+      <div class="row-track" id="row-series"></div>
+    </section>
+
+    <section class="row">
+      <div class="row-head"><h2>Twenty-First Century Landmarks</h2><a href="#/search">View all →</a></div>
+      <div class="row-track" id="row-modern"></div>
+    </section>
+
+    <section class="row" style="padding-bottom:80px">
+      <div class="row-head"><h2>Browse by Genre</h2><a href="#/search">Open search →</a></div>
+      <div class="filters" id="genre-row" style="justify-content:flex-start"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="foot-mark">CineVibe</div>
+      <div style="margin-top:8px">Screening Notes 2026 · studio@cinevibe.photo</div>
+    </div>
+    <div class="foot-links">
+      <a href="#/archive">Archive</a>
+      <a href="#/search">Search</a>
+      <a href="#/profile">Watchlist</a>
+    </div>
+  </footer>
+</section>
+
+<!-- ===== VIEW 3: DETAIL ===== -->
+<section class="view" id="view-detail" data-view="detail">
+  <main id="detailMain"></main>
+
+  <section class="row" style="padding-bottom:60px">
+    <div class="row-head"><h2>More like this</h2></div>
+    <div class="row-track" id="relatedTrack"></div>
+  </section>
+
+  <footer class="site-footer">
+    <div>
+      <div class="foot-mark">CineVibe</div>
+      <div style="margin-top:8px">Screening Notes 2026 · studio@cinevibe.photo</div>
+    </div>
+    <div class="foot-links">
+      <a href="#/archive">Archive</a>
+      <a href="#/search">Search</a>
+      <a href="#/profile">Watchlist</a>
+    </div>
+  </footer>
+
+  <div class="modal" id="trailerModal">
+    <div class="modal-content">
+      <button class="modal-close" data-close-trailer>Close</button>
+      <video id="trailerVideo" controls playsinline muted
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260922_195107_ed3f055a-3a13-4a71-b743-e10310454246.mp4"></video>
+    </div>
+  </div>
+</section>
+
+<!-- ===== VIEW 4: PLAYER ===== -->
+<section class="view" id="view-player" data-view="player">
+  <div class="player-page">
+    <div class="player-top" id="playerTop">
+      <div>
+        <a class="wordmark" href="#/archive" style="font-size:20px">CineVibe</a>
+        <div class="info" id="pTitle">—</div>
+      </div>
+      <div style="display:flex;gap:8px;align-items:center">
+        <button class="btn small ghost" id="epBtn">Episodes</button>
+        <a class="btn small ghost" href="#/archive">Back</a>
+      </div>
+    </div>
+
+    <div class="player-stage">
+      <video id="video" muted
+        src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260922_195107_ed3f055a-3a13-4a71-b743-e10310454246.mp4"
+        playsinline preload="auto"></video>
+    </div>
+
+    <div class="player-controls" id="playerControls">
+      <div class="progress-track" id="progress">
+        <div class="progress-fill" id="progressFill"></div>
+        <div class="progress-thumb" id="progressThumb"></div>
+      </div>
+      <div class="player-row">
+        <button id="playBtn" aria-label="Play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></button>
+        <button id="back10" aria-label="Back 10 seconds"><svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8z"/></svg></button>
+        <button id="fwd10" aria-label="Forward 10 seconds"><svg viewBox="0 0 24 24"><path d="M12 5V1l5 5-5 5V7c-3.3 0-6 2.7-6 6s2.7 6 6 6 6-2.7 6-6h2c0 4.4-3.6 8-8 8s-8-3.6-8-8 3.6-8 8-8z"/></svg></button>
+        <button id="muteBtn" aria-label="Mute"><svg viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3z"/></svg></button>
+        <span class="time" id="timeNow">0:00</span>
+        <span style="font-size:12px;color:var(--dim)">/</span>
+        <span class="time" id="timeTotal">0:00</span>
+        <span class="spacer"></span>
+        <button id="fsBtn" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M4 4h6v2H6v4H4V4zm10 0h6v6h-2V6h-4V4zM4 14h2v4h4v2H4v-6zm14 0h2v6h-6v-2h4v-4z"/></svg></button>
+      </div>
+    </div>
+
+    <aside class="ep-drawer" id="epDrawer">
+      <header><h3 id="drawerTitle">Episodes</h3><div class="sub" id="drawerSub">Choose an episode</div></header>
+      <div class="ep-list" id="epList"></div>
+    </aside>
+  </div>
+</section>
+
+<!-- ===== VIEW 5: SEARCH ===== -->
+<section class="view" id="view-search" data-view="search">
+  <main>
+    <section class="search-hero">
+      <div class="eyebrow">Search the archive</div>
+      <h1>Find a Frame</h1>
+      <div class="search-wrap">
+        <input class="search-input" id="searchInput" type="search" placeholder="Search titles, directors, cast…" autocomplete="off">
+        <button class="search-go" id="searchGo" aria-label="Search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.35-4.35"/></svg>
+        </button>
+        <div class="suggestions" id="suggestions"></div>
+      </div>
+    </section>
+
+    <div class="filters" id="filters"></div>
+
+    <section class="results">
+      <div class="results-head">
+        <h2 id="resultsTitle">All Titles</h2>
+        <div class="count" id="resultsCount"></div>
+      </div>
+      <div class="results-grid" id="resultsGrid"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="foot-mark">CineVibe</div>
+      <div style="margin-top:8px">Screening Notes 2026 · studio@cinevibe.photo</div>
+    </div>
+    <div class="foot-links">
+      <a href="#/archive">Archive</a>
+      <a href="#/search">Search</a>
+      <a href="#/profile">Watchlist</a>
+    </div>
+  </footer>
+</section>
+
+<!-- ===== VIEW 6: PROFILE ===== -->
+<section class="view" id="view-profile" data-view="profile">
+  <main>
+    <section class="profile-hero">
+      <div class="profile-avatar">EV</div>
+      <div class="profile-info">
+        <h1>Ethan Vale</h1>
+        <div class="email">studio@ethanvale.photo</div>
+        <div class="meta">Nairobi · Cape Town · Reykjavík</div>
+      </div>
+    </section>
+
+    <div class="tabs" id="tabs">
+      <button class="tab active" data-tab="watchlist">Watchlist</button>
+      <button class="tab" data-tab="history">History</button>
+      <button class="tab" data-tab="settings">Settings</button>
+    </div>
+
+    <section class="tab-panel active" data-panel="watchlist">
+      <div class="results-head"><h2>Saved titles</h2><div class="count" id="watchCount"></div></div>
+      <div class="results-grid" id="watchGrid"></div>
+    </section>
+
+    <section class="tab-panel" data-panel="history">
+      <div class="results-head"><h2>Recently viewed</h2><div class="count" id="histCount"></div></div>
+      <div class="results-grid" id="histGrid"></div>
+    </section>
+
+    <section class="tab-panel" data-panel="settings">
+      <h2 style="font-family:var(--serif);font-weight:400;font-size:26px;margin:0 0 24px">Preferences</h2>
+      <div class="settings-form">
+        <div class="field"><label>Display name</label><input type="text" value="Ethan Vale"></div>
+        <div class="field"><label>Email</label><input type="email" value="studio@ethanvale.photo"></div>
+        <div class="field"><label>Preferred language</label>
+          <select><option>English</option><option>Swahili</option><option>French</option><option>Icelandic</option></select>
+        </div>
+        <div class="toggle-row"><span>Autoplay trailers</span><div class="switch on" data-switch></div></div>
+        <div class="toggle-row"><span>Reduce motion</span><div class="switch" data-switch></div></div>
+        <div class="toggle-row"><span>Show subtitles by default</span><div class="switch on" data-switch></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <div class="foot-mark">CineVibe</div>
+      <div style="margin-top:8px">Screening Notes 2026 · studio@cinevibe.photo</div>
+    </div>
+    <div class="foot-links">
+      <a href="#/archive">Archive</a>
+      <a href="#/search">Search</a>
+      <a href="#/profile">Watchlist</a>
+    </div>
+  </footer>
+</section>
+
+
+
+<script src="script.js"></script>
+<script src="auth.js"></script>
+</body>
+</html>
