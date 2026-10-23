@@ -16,9 +16,14 @@ Welcome to **CineVibe**, a modern movie website designed for movie lovers. It fe
 - 🖼️ Movie posters and visual content
 - 📱 User-friendly layout for desktop and mobile devices
 
+
+
+https://github.com/user-attachments/assets/49493b6a-b83a-4858-94e6-e0c7ae4839d3
+
+
 *Note: Features may vary depending on the functionality implemented in the current version.*
 
-## 🛠️ Technologies Used
+ 🛠️ Technologies Used
 
 - HTML5
 - CSS3
