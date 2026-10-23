@@ -41,7 +41,7 @@ The actual folder and file names may differ depending on your project structure.
 1. Clone the repository
 
 
-git clone https://github.com/YOUR_GITHUB_USERNAME/cinevibe-movie-app.git
+git clone https://github.com/kasuni123-ui/cinevibe-movie-app.git
 
 
 2. Open the project
